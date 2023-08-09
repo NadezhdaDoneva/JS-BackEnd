@@ -1,0 +1,160 @@
+{{!-- <html lang="en">
+  <!-- Starts Head Section -->
+
+  <head>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="/images/free-30-instagram-stories-icons23_122570.png"
+    />
+    <title>Petstagram</title>
+  </head>
+
+  <!-- Starts Body Section -->
+
+  <body>
+    <!--Error Container-->
+    {{#if error}}
+      <div>
+        <div class="errorContainer">
+          <p>{{error}}</p>
+        </div>
+      </div>
+    {{/if}}
+
+    <!-- Starts Header Section with Navigation Bar -->
+    <header>
+      <nav class="navbar">
+        <div class="container">
+          <div class="logo">
+            <!-- Link to Home Page -->
+            <a href="/">
+              <img
+                width="50px"
+                src="/images/free-30-instagram-stories-icons23_122570.png"
+                alt="img1"
+              />
+            </a>
+            <!-- Link to Home Page -->
+            <a class="home" href="/">
+              <i>Petstagram</i>
+            </a>
+          </div>
+
+          <div class="nav-links">
+            <ul class="nav-group">
+              <li class="nav-item">
+                <!-- Link to Catalog Page -->
+                <a href="/photos">
+                  <i>Catalog</i>
+                </a>
+              </li>
+
+              <!--For login users-->
+              {{#if isAuthenticated}}
+                <li class="nav-item">
+                  <!-- Link to Add Photo Page -->
+                  <a href="/photos/create">
+                    <i>Add Photo</i>
+                  </a>
+                </li>
+
+                <li class="nav-item">
+                  <!-- Link to Profile Page -->
+                  <a href="/profile">
+                    <i>Profile</i>
+                  </a>
+                </li>
+
+                <li class="nav-item">
+                  <!-- Link to Logout Page -->
+                  <a href="/users/logout">
+                    <i>Logout</i>
+                  </a>
+                </li>
+              {{else}}
+                <!--For Guest User-->
+                <li class="nav-item">
+                  <!-- Link to Login Page -->
+                  <a href="/users/login">
+                    <i>Login</i>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <!-- Link to Register Page -->
+                  <a href="/users/register">
+                    <i>Register</i>
+                  </a>
+                </li>
+              {{/if}}
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    {{{body}}}
+
+    <!-- Starts Footer Section -->
+    <div class="footer">
+      <span class="footer-section">
+        © 2023 SoftUni Back-End Exam
+      </span>
+    </div>
+
+  </body>
+
+</html> --}}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page - Gaming Team</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+
+
+<body>
+
+{{!-- Error  container --}}
+{{#if error}}
+ <div>
+            <div class="errorContainer">
+                <p>{{error}}</p>
+            </div>
+        </div> 
+{{/if}}
+
+    <header class="header">
+        <nav>
+            <img src="/images/logo.jpg" class="logo">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/photos">All Games Code</a></li>
+                {{#if isAuthenticated}}
+                <li><a href="/search">Search</a></li>
+                <li><a href="/photos/create">Create Game Offer</a></li>
+                <li><a href="/users/logout">Logout</a></li>
+                {{else}}
+                <li><a href="/users/login">Login</a></li>
+                <li><a href="/users/register">Register</a></li>
+                {{/if}}
+            </ul>
+        </nav>
+    </header>
+
+    {{{body}}}
+
+      <footer>
+        <p>Back-End 2023</p>
+    </footer>
+
+</body>
+
+</html>

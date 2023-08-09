@@ -1,0 +1,35 @@
+{{!-- 
+    <!-- Starts Main Section -->
+    <main>
+        <div class="container">
+            <div class="col-9">
+                <!-- Start Pet Photos Post Section -->
+                {{#each photos}}
+                    {{>petPhoto}}
+                {{else}}
+                <!--If there are no photo yet!-->
+                <article class="not-available-photo">
+                    <h1>No photo posts yet.</h1>
+                </article>
+                {{/each}}
+                
+            </div>
+
+        </div>
+    </main>
+  --}}
+
+    <main id="catalog">
+        <section class="game-market">
+            <h1>Game Trade Code</h1>
+            <div class="offer-list">
+                {{#each photos}}
+                {{>petPhoto}}
+                {{else}}
+             <div class="no-offer">
+                <p>There are no game offers found!</p>
+            </div> 
+               {{/each}}
+            </div>
+        </section>
+    </main>

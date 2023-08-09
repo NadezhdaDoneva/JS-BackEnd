@@ -1,0 +1,67 @@
+{{!-- 
+
+    <!-- Starts Main Section -->
+    <main>
+        <!-- Start Add Photo Section -->
+        <div class="createPage">
+            <h2>Add photo</h2>
+            <!-- Start Add Photo Form -->
+            <form method="POST">
+                <p>
+                    <input type="text" name="name" placeholder="Name">
+                </p>
+
+                <p>
+                    <input type="number" name="age" placeholder="Age">
+                </p>
+
+                <p>
+                    <textarea type="text" name="description" placeholder="Description"></textarea>
+                </p>
+
+                <p>
+                    <input type="text" name="location" placeholder="Location">
+                </p>
+
+                <p>
+                    <input type="text" name="image" placeholder="Link to image">
+                </p>
+                <!-- Add Photo Button -->
+                <button class="add-btn" type="submit">Add Photo</button>
+            </form>
+        </div>
+    </main>
+
+  --}}
+
+  <main id="create">
+        <section id="create-container">
+            <div class="create-container-info">
+                <h1>Create Game Code Offer</h1>
+                <h4>Post your code to sell</h4>
+                <form method="POST">
+                    <label>Platform:</label>
+                    <select id="platform" name="platform">
+                        <option value="">-------</option>
+                        <option value="PC">PC</option>
+                        <option value="Nintendo">Nintendo</option>
+                        <option value="PS4">PS4</option>
+                        <option value="PS5">PS5</option>
+                        <option value="XBOX">XBOX</option>
+                    </select>
+                    <label>Name:</label>
+                    <input type="text" id="name" name="name">
+                    <label>Image:</label>
+                    <input type="text" id="image" name="image" placeholder="http://...">
+                    <label>Price:</label>
+                    <input type="number" id="price" name="price">
+                    <label>Genre:</label>
+                    <input type="text" id="genre" name="genre">
+                    <label>Description:</label>
+                    <textarea id="description" name="description"></textarea>
+
+                    <input type="submit" id="btn" value="CREATE"></input>
+                </form>
+            </div>
+        </section>
+    </main>
