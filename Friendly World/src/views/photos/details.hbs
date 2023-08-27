@@ -1,0 +1,53 @@
+
+
+
+<main class="details">
+            <!-- Details page -->
+            <section id="details">
+                <div id="details-wrapper">
+                    <p id="details-title">Name: {{photo.name}}</p>
+                    <div id="img-wrapper">
+                        <img src="{{photo.image}}" />
+                    </div>
+                    <div id="info-wrapper">
+                        <table>
+                            <tr>
+                                <td>
+                                    <p>
+                                        Years: <span id="details-years">{{photo.years}}</span>
+                                    </p>
+                                </td>
+                                <td>
+                                    <p>Kind: <span id="details-kind">{{photo.kind}}</span></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>Need of: <span id="details-need">{{photo.need}}</span></p>
+                                </td>
+                                <td>
+                                    <p>Location: <span id="details-location">{{photo.location}}</span></p>
+                                </td>
+                            </tr>
+                        </table>
+                        <p>Description: <span id="details-description">{{photo.description}}</span></p>
+                    </div>
+
+                    <div id="action-buttons">
+                    {{#if isAuthenticated}}
+                    {{#if isOwner}}
+                    <!--Edit and Delete are only for creator-->
+                        <a href="/photos/{{photo._id}}/edit" id="edit-btn">Edit</a>
+                        <a href="/photos/{{photo._id}}/delete" id="delete-btn">Delete</a>
+                        {{else}}   
+                        {{#if isDonated}}
+                        <p id="already-donated">You already donated!</p>
+                        {{else}}
+                        <a href="/photos/{{photo._id}}/donate" id="donation-btn">Donation</a>
+                        {{/if}}
+                    {{/if}}
+                    {{/if}}
+                    </div>
+                </div>
+            </section>
+        </main>

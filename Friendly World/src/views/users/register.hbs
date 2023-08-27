@@ -1,0 +1,37 @@
+
+{{!-- 
+ <main id="register">
+      
+        <div class="register-box">
+            <h1>Register</h1>
+            <h4>It's free and only takes a minute</h4>
+            <form method="POST">
+                <label>Username</label>
+                <input type="text" name="username" placeholder="Username..">
+                <label>Email</label>
+                <input type="text" name="email" placeholder="Email..">
+                <label>Password</label>
+                <input type="password" name="password" placeholder="Password..">
+                <label>Confirm Password</label>
+                <input type="password" name="repeatPassword" placeholder="Confirm Password..">
+                <input type="submit" value="Register">
+            </form>
+            <p>Already have an account? <a href="/users/login">Login here</a></p>
+        </div>
+    </main> --}}
+
+    <main class="register">
+            <!-- Register Page (Only for Guest users) -->
+            <section id="register">
+                <div class="form">
+                    <h2>Register</h2>
+                    <form class="login-form" method="POST">
+                        <input type="text" name="email" id="register-email" placeholder="email" />
+                        <input type="password" name="password" id="register-password" placeholder="password" />
+                        <input type="password" name="repeatPassword" id="repeat-password" placeholder="repeat password" />
+                        <button type="submit">Register</button>
+                        <p class="message">Already registered? <a href="/users/login">Login</a></p>
+                    </form>
+                </div>
+            </section>
+        </main>
