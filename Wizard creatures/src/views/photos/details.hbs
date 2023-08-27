@@ -1,0 +1,71 @@
+
+     <main>
+
+            <section id="details-page">
+
+                <div class="main_card">
+                    <div class="card_left">
+                        <div class="card_datails">
+
+                            <h1>Name: {{photo.name}}</h1>
+                            <h3>Created by an author: {{photo.owner}}</h3>
+                            <div class="card_character">
+                                <p class="card-species">Species: {{photo.species}}</p>
+                                <p class="card-skin">Skin colour: {{photo.skin}}</p>
+                                <p class="card-eye">Eye Colour: {{photo.eye}}</p>
+                            </div>
+
+                            <p class="disc">Description: {{photo.description}}</p>
+
+                            <!-- If there is no registered user, do not display buttons-->
+                            {{#if isAuthenticated}}
+                            <div class="social-btn">
+                                <!-- Only for registered user and author of the post -->
+                                {{#if isOwner}}
+                                <a href="/photos/{{photo._id}}/edit" class="edit-btn">Edit</a>
+                                <a href="/photos/{{photo._id}}/delete" class="del-btn">Delete</a>
+                                {{else}}   
+                                {{#if isBought}}
+                                <!-- logged in user who has already voted-->
+                                <p class="thanks-for-vote">Thanks For Voting</p>
+                                {{else}}
+                                <!-- logged in users, who have not yet voted-->
+                                <a href="/photos/{{photo._id}}/bought" class="vote-up">Vote</a>
+                                {{/if}}
+                                {{/if}}
+                                {{/if}}
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card_right">
+                        <img src="{{photo.image}}"
+                            alt="image">
+                    </div>
+                </div>
+
+            </section>
+
+            <section id="votes">
+                <div class="vote-info">
+                    <div class="card_left">
+                        <div class="card_datails">
+                            <h1>Votes</h1>
+                            <div class="card_vote">
+                                <!-- Show the rating of votes, if there are no votes yet, the number must be 0. -->
+                                <p class="PV">Total rating of votes: {{count}}</p>
+                            </div>
+                            {{#if hasBeenBought}}
+                            <!-- If there are already people who have cast their vote for the post, separate their emails with a comma and a space ", " -->
+                             <p class="disc">People who voted for the post - {{#each photo.buyer}} 
+                                {{user.email}}
+                                {{/each}}
+                             </p>
+                            {{else}}
+                            <!-- If not display: -->
+                            <p class="disc">People who voted for the post - No one has voted yet.</p>
+                            {{/if}}
+                        </div>
+                    </div>
+                </div>
+            </section>
